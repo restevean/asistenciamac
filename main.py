@@ -1,10 +1,9 @@
 # Reformat TEAMS assistance meeting logs
-# TODO Extract the name parsing as a funtion to parser.py
 
 import click
 import csv
 from csv import reader as readcsv
-from parser import parse_row
+from parser import parse_row, parse_file_name
 
 
 @click.command()
@@ -17,12 +16,7 @@ def asistencia():
         if file == "Q" or file == "q":
             break
         # controlamos la extensión del nombre de archivo, puede no llevarla o llevarla mal escrita
-        if file[len(file) - 4: len(file) - 3: 1] == ".":
-            if file[len(file) - 3: len(file): 1] != "csv":
-                # file[len(file) - 3:len(file):1] = 'csv'
-                file = file[0: len(file) - 3: 1] + "csv"
-        else:
-            file = file + ".csv"
+        file = parse_file_name(file)
 
         try:
             parsed_list = []
