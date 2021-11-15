@@ -1,4 +1,5 @@
 # Reformat TEAMS assistance meeting logs
+# TODO Extract the name parsing as a funtion to parser.py
 
 import click
 import csv
@@ -33,10 +34,7 @@ def asistencia():
                 next(contenidocsv)
 
                 for linea in contenidocsv:
-                    try:
-                        parsed_list.append(parse_row(linea))
-                    except:
-                        ...
+                    parsed_list.append(parse_row(linea))
 
             with open(f"N {file}", "w", encoding="utf-16") as csvFileOutput:
                 # Lo escribimos con csv.Writer()
