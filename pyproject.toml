@@ -6,6 +6,8 @@ authors = ["restevean <restevean@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+click = "^8.0.3"
+Record = "^3.5"
 
 [tool.poetry.dev-dependencies]
 
