@@ -2,13 +2,13 @@
 
 import click
 import csv
-from csv import reader as readcsv
+# from csv import reader as readcsv 27-12-21
 from parser import parse_row, parse_file_name
 
 
 @click.command()
 def asistencia():
-    click.echo("Copyrigt© 2021 Rafael Esteve Antonino")
+    click.echo("Copyrigt © 2021 Rafael Esteve Antonino")
     click.echo("Todos los derechos reservados")
 
     while True:
@@ -21,8 +21,9 @@ def asistencia():
         try:
             parsed_list = []
             with open(file, encoding="utf-16") as csvfile:
-                # Lo leemos con csv.Reader()
-                contenidocsv: readcsv = csv.reader(csvfile, dialect="excel-tab")
+                # Lo leemos con csv.reader()
+                # contenidocsv: readcsv = csv.reader(csvfile, dialect="excel-tab") 27-12-21
+                contenidocsv = csv.reader(csvfile, dialect="excel-tab")
                 click.echo("Leyendo lista...")
                 parsed_list.append(['Nombre completo', 'Acción del usuario', 'Marca de tiempo'])
                 next(contenidocsv)
