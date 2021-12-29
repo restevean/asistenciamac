@@ -18,6 +18,7 @@ def asistencia():
         # controlamos la extensión del nombre de archivo, puede no llevarla o llevarla mal escrita
         file = parse_file_name(file)
 
+        # Esto es un comentario de prueba
         try:
             parsed_list = []
             with open(file, encoding="utf-16") as csvfile:
