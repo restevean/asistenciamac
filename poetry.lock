@@ -5,7 +5,6 @@ description = "Composable command line interface toolkit"
 category = "main"
 optional = false
 python-versions = ">=3.6"
-
 [package.dependencies]
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 

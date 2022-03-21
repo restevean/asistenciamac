@@ -1,4 +1,4 @@
-# Proccess_list class
+# Process_list class
 import datetime as datetime
 from datetime import datetime
 
